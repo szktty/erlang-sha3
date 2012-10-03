@@ -1,0 +1,8 @@
+@title SHA-3 for Erlang
+@author SUZUKI Tetsuya <tetsuya.suzuki@gmail.com>
+@copyright 2012- SUZUKI Tetsuya
+@version 0.1.0
+@reference <a href="http://en.wikipedia.org/wiki/SHA-3">Wikipedia: SHA-3</a>
+@reference <a href="http://csrc.nist.gov/groups/ST/hash/sha-3/index.html">NIST: Cryptographic Hash Algorithm Competition</a>
+@reference <a href="http://keccak.noekeon.org/">The Keccak sponge function family</a>
+

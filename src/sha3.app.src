@@ -1,0 +1,12 @@
+{application, sha3,
+ [
+  {description, ""},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {modules, [sha3]},
+  {env, []}
+ ]}.
