@@ -37,7 +37,7 @@ int InitSponge(spongeState *state, unsigned int rate, unsigned int capacity)
     return 0;
 }
 
-void AbsorbQueue(spongeState *state)
+static void AbsorbQueue(spongeState *state)
 {
     // state->bitsInQueue is assumed to be equal to state->rate
     #ifdef KeccakReference
@@ -191,7 +191,7 @@ int Absorb(spongeState *state, const unsigned char *data, unsigned long long dat
     return 0;
 }
 
-void PadAndSwitchToSqueezingPhase(spongeState *state)
+static void PadAndSwitchToSqueezingPhase(spongeState *state)
 {
     // Note: the bits are numbered from 0=LSB to 7=MSB
     if (state->bitsInQueue + 1 == state->rate) {

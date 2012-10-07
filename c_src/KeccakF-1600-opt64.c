@@ -174,7 +174,7 @@ ALIGN const UINT64 rot_39_41[2] = {39, 41};
 
 #include "KeccakF-1600-unrolling.macros"
 
-void KeccakPermutationOnWords(UINT64 *state)
+static void KeccakPermutationOnWords(UINT64 *state)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -188,7 +188,7 @@ void KeccakPermutationOnWords(UINT64 *state)
 #endif
 }
 
-void KeccakPermutationOnWordsAfterXoring(UINT64 *state, const UINT64 *input, unsigned int laneCount)
+static void KeccakPermutationOnWordsAfterXoring(UINT64 *state, const UINT64 *input, unsigned int laneCount)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -206,7 +206,7 @@ void KeccakPermutationOnWordsAfterXoring(UINT64 *state, const UINT64 *input, uns
 }
 
 #ifdef ProvideFast576
-void KeccakPermutationOnWordsAfterXoring576bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring576bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -222,7 +222,7 @@ void KeccakPermutationOnWordsAfterXoring576bits(UINT64 *state, const UINT64 *inp
 #endif
 
 #ifdef ProvideFast832
-void KeccakPermutationOnWordsAfterXoring832bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring832bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -238,7 +238,7 @@ void KeccakPermutationOnWordsAfterXoring832bits(UINT64 *state, const UINT64 *inp
 #endif
 
 #ifdef ProvideFast1024
-void KeccakPermutationOnWordsAfterXoring1024bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring1024bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -254,7 +254,7 @@ void KeccakPermutationOnWordsAfterXoring1024bits(UINT64 *state, const UINT64 *in
 #endif
 
 #ifdef ProvideFast1088
-void KeccakPermutationOnWordsAfterXoring1088bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring1088bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -270,7 +270,7 @@ void KeccakPermutationOnWordsAfterXoring1088bits(UINT64 *state, const UINT64 *in
 #endif
 
 #ifdef ProvideFast1152
-void KeccakPermutationOnWordsAfterXoring1152bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring1152bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -286,7 +286,7 @@ void KeccakPermutationOnWordsAfterXoring1152bits(UINT64 *state, const UINT64 *in
 #endif
 
 #ifdef ProvideFast1344
-void KeccakPermutationOnWordsAfterXoring1344bits(UINT64 *state, const UINT64 *input)
+static void KeccakPermutationOnWordsAfterXoring1344bits(UINT64 *state, const UINT64 *input)
 {
     declareABCDE
 #if (Unrolling != 24)
@@ -324,7 +324,7 @@ void KeccakPermutation(unsigned char *state)
     KeccakPermutationOnWords((UINT64*)state);
 }
 
-void fromBytesToWord(UINT64 *word, const UINT8 *bytes)
+static void fromBytesToWord(UINT64 *word, const UINT8 *bytes)
 {
     unsigned int i;
 
@@ -443,7 +443,7 @@ void KeccakAbsorb(unsigned char *state, const unsigned char *data, unsigned int 
 #endif
 }
 
-void fromWordToBytes(UINT8 *bytes, const UINT64 word)
+static void fromWordToBytes(UINT8 *bytes, const UINT64 word)
 {
     unsigned int i;
 
