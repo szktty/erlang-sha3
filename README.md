@@ -3,7 +3,7 @@ erlang-sha3
 
 [![Build Status](https://secure.travis-ci.org/szktty/erlang-sha3.png?branch=develop)](http://travis-ci.org/szktty/erlang-sha3)
 
-SHA3 for Erlang
+SHA-3 for Erlang (64 bit only)
 
 
 Licenses
