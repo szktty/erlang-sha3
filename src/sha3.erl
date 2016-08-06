@@ -24,7 +24,7 @@ init() ->
                   Path ->
                       Path
               end,
-    erlang:load_nif(filename:join(PrivDir, sha3_nif), 0).
+    erlang:load_nif(filename:join(PrivDir, "erlang-sha3"), 0).
 
 %% @doc Returns a new context for hash operation.
 %%      Bit length of digest (`BitLen') must be one of 224, 256, 384 and 512.

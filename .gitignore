@@ -12,3 +12,5 @@ priv
 edoc-info
 stylesheet.css
 
+_build
+/TEST-file_"sha3.app".xml
