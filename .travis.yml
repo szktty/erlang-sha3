@@ -8,9 +8,6 @@ notifications:
   disabled: true
 
 otp_release:
-  - R15B02
-  - R15B01
-  - R15B
   - 18.0
   - 18.1
   - 18.2
