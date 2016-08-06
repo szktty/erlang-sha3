@@ -1,23 +1,30 @@
-.PHONY: doc
+REBAR?=rebar3
+
+.PHONY: \
+	all \
+	clean \
+	nuke \
+	test \
+	update \
+	dialyzer
 
 all:
-	./rebar compile
-	./rebar doc
-	./rebar xref
-	./rebar eunit
-
-compile:
-	./rebar compile
-
-doc:
-	./rebar doc
-
-xref: compile
-	./rebar xref
+	@$(REBAR) compile
 
 clean:
-	./rebar clean
+	@$(REBAR) clean
 
-test: xref
-	./rebar eunit
+nuke: clean
+	@rm -rf _build
 
+test:
+	@$(REBAR) eunit
+
+update:
+	@$(REBAR) update
+
+dialyzer:
+	@$(REBAR) dialyzer
+
+coveralls:
+	@${REBAR} coveralls send
