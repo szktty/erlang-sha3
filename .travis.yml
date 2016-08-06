@@ -14,3 +14,8 @@ otp_release:
   - 18.0
   - 18.1
   - 18.2
+
+cache:
+  directories:
+  - $HOME/.cache/rebar3/
+
