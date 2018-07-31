@@ -1,1 +1,6 @@
-[{<<"hex2bin">>,{pkg,<<"hex2bin">>,<<"1.0.0">>},0}].
+{"1.1.0",
+[{<<"hex2bin">>,{pkg,<<"hex2bin">>,<<"1.0.0">>},0}]}.
+[
+{pkg_hash,[
+ {<<"hex2bin">>, <<"AAC26EAB998AE80EACEE1C7607C629AB503EBF77A62B9242BAE2B94D47DCB71E">>}]}
+].
