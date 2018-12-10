@@ -2,6 +2,8 @@
 
 -export([hash_init/1, hash_update/2, hash_final/1, hash/2]).
 
+-export([hexhash/2]).
+
 -on_load(init/0).
 
 -type bitlen() :: 224 | 256 | 384 | 512.
@@ -10,6 +12,8 @@
 %% State of hash operation return.
 
 -type digest() :: <<_:224>> | <<_:256>> | <<_:384>> | <<_:512>>.
+
+-export_type([bitlen/0, context/0, digest/0]).
 
 -define(nif_stub, nif_stub_error(?LINE)).
 nif_stub_error(Line) ->
@@ -55,3 +59,7 @@ hash_final(_Context) ->
 hash(_BitLen, _Binary) ->
     ?nif_stub.
 
+-spec hexhash(bitlen(), binary()) -> binary().
+hexhash(Bitlen, Binary) ->
+    Hash = hash(Bitlen, Binary),
+    list_to_binary(hex2bin:bin_to_hexstr(Hash)).
